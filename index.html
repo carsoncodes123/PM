@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="your, keywords" />
+    <meta name="author" content="Author" />
+
+    <meta property="og:description" content="your site description" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:image" content="logo" />
+
+    <!--meta twitter-->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:image" content="logo" />
+    <meta property="twitter:title" content="Site name" />
+    <meta property="twitter:description" content="your site description" />
+    <!-- end meta twitter-->
+
+    <title>Your site</title>
+
+    <!-- Watch css, run "npm run watch" to watch the class change -->
+    <link rel="stylesheet" href="./assets/base/tailwindcss/output.css" />
+
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <!-- Minify CSS, make sure you run "npm run watch" and then 
+        "npm run minify" to generate new minify data if there is a change 
+    -->
+    <!-- <link rel="stylesheet" href="./assets/base/tailwindcss/output.min.css"> -->
+</head>
+
+<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
+    <!-- Navbar -->
+    <nav id="nav"
+        class="translate-y-auto sticky top-0 z-40 h-max w-full flex-1 justify-center bg-primary p-6 transition duration-500 lg:p-4">
+        <div class="mx-auto max-w-6xl flex-col flex-wrap items-center justify-between text-primary">
+            <div class="flex flex-1 flex-wrap items-center font-open-sans">
+                <!-- Nav Title -->
+                <button id="navLogo" type="button" class="z-50 inline-flex flex-1 gap-2 text-xl font-bold">
+                    <div class="before:text-secondary before:content-['<'] after:text-secondary after:content-['/>']">
+                        Carson Graham
+                    </div>
+                </button>
+                <!-- End Nav Title -->
+
+                <!-- Nav Menu -->
+                <div id="navMove"
+                    class="invisible fixed inset-0 z-40 flex-none basis-full translate-x-full bg-primary text-lg transition duration-500 lg:visible lg:relative lg:top-0 lg:basis-auto lg:translate-x-0 lg:transition-none">
+                    <div
+                        class="flex h-full flex-col flex-nowrap items-center justify-center space-x-0 space-y-8 p-6 lg:flex lg:flex-row lg:justify-end lg:space-x-14 lg:space-y-0 lg:p-0">
+                        <button class="navMenuAbout text-xl hover:text-secondary lg:text-base">
+                            About Me
+                        </button>
+                        <button id="navMenuPortfolio" class="text-xl hover:text-secondary lg:text-base">
+                            My Portofolio
+                        </button>
+                        <button id="navMenuContact"
+                            class="group inline-flex items-center gap-3 rounded-full border-2 border-primary px-8 py-4 hover:border-transparent hover:bg-senary hover:font-semibold hover:text-senary">
+                            GET IN TOUCH
+                            <!-- Arrow top left -->
+                            <svg class="h-6 w-6 fill-primary group-hover:fill-tertiary" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19L5 17.59Z" />
+                            </svg>
+                            <!-- End Arror Top Left -->
+                        </button>
+                    </div>
+                </div>
+                <!-- End Nav Menu -->
+
+                <!-- Nav Icon -->
+                <div class="z-50 flex-none">
+                    <div class="flex justify-end lg:hidden">
+                        <button id="navButton"
+                            class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
+                            <!-- Open Icon -->
+                            <svg class="navMenuIcon block w-8 fill-primary" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
+                            </svg>
+                            <!-- End Open Icon -->
+
+                            <!-- Close Icon -->
+                            <svg class="navMenuIcon hidden w-8 fill-primary" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.7-.275q-.275-.275-.275-.7q0-.425.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275q.425 0 .7.275q.275.275.275.7q0 .425-.275.7L13.4 12l4.9 4.9q.275.275.275.7q0 .425-.275.7q-.275.275-.7.275q-.425 0-.7-.275Z" />
+                            </svg>
+                            <!-- End Close Icon -->
+                        </button>
+                    </div>
+                </div>
+
+                <!-- End Nav Icon -->
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <main class="my-12 h-full w-full flex-1 overflow-hidden">
+        <!-- Section One -->
+        <section class="mx-auto h-auto px-3 pt-20 text-primary sm:max-w-4xl md:max-w-4xl md:px-6 lg:max-w-5xl lg:pt-3">
+            <div class="flex flex-col items-center gap-6 font-poppins font-semibold sm:gap-3">
+                <div type="button" class="inline-flex flex-wrap justify-center gap-3 text-center text-5xl sm:text-6xl">
+                    <div class="inline-flex after:text-secondary after:content-[',']">
+                        Hello
+                    </div>
+                    I'm
+                        Carson G
+                    </span>
+                </div>
+                <div class="inline-flex flex-wrap justify-center text-2xl sm:text-4xl">
+                    A Professional
+                    <div class="text-secondary">-</div>
+                    Project Manager and Scrum master
+                </div>
+                <div class="relative flex-none">
+                    <!-- Hero Image -->
+                    <div class="z-10 flex">
+                        <img class="overflow-hidden object-cover object-top sm:h-[500px] sm:w-[500px]"
+                            src="./assets/img/about/Carson 1.png" alt="Carson Graham" />
+                        <!-- Scroll Down Button -->
+
+                        <!-- Just remove the "hidden" show scroll button on other screen size -->
+                        <div class="absolute bottom-12 left-[46%] z-20 hidden sm:bottom-8 sm:left-[45%] lg:block">
+                            <button
+                                class="navMenuAbout inline-flex h-32 w-16 flex-col items-center justify-center gap-2 rounded-full border border-primary/5 bg-white/5 backdrop-blur-sm sm:h-40 sm:w-20">
+                                <svg class="h-5 w-5 fill-tertiary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 19.575q-.2 0-.375-.063q-.175-.062-.325-.212l-6.6-6.6q-.3-.3-.3-.713q0-.412.3-.712t.7-.3q.4 0 .7.3l4.9 4.9v-11.2q0-.425.288-.7Q11.575 4 12 4t.713.287Q13 4.575 13 5v11.175l4.9-4.9q.3-.3.7-.3q.4 0 .7.3q.3.3.3.712q0 .413-.3.713l-6.6 6.6q-.15.15-.325.212q-.175.063-.375.063Z" />
+                                </svg>
+                                <span class="px-3 font-open-sans text-sm font-semibold text-senary">
+                                    Scroll Down
+                                </span>
+                            </button>
+                        </div>
+                        <!-- End Scroll Down Button -->
+                    </div>
+                    <!-- hero Image -->
+
+                    <!-- Filter Image -->
+                    <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#141416]"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-20 bg-primary/30 blur-lg"></div>
+                    <!-- End Filter Image -->
+                </div>
+            </div>
+        </section>
+        <!-- End Section One -->
+
+        <!-- Section Two -->
+        <section id="sectionAbout"
+            class="mx-auto h-auto px-6 py-28 text-primary sm:max-w-4xl sm:py-40 md:max-w-4xl lg:max-w-6xl lg:px-12">
+            <div class="flex flex-col">
+                <div class="mb-12 flex-1 md:mb-0">
+                    <!-- Section Title -->
+                    <div class="inline-flex gap-2 font-open-sans text-xl font-bold">
+                        <div
+                            class="before:text-secondary before:content-['<'] after:text-secondary after:content-['/>']">
+                            About Me
+                        </div>
+                    </div>
+                    <!-- End Section Title -->
+                </div>
+
+                <!-- Profile Detail -->
+                <div class="flex-1 space-y-6 md:space-y-0 lg:space-y-12">
+                    <div class="flex md:justify-end">
+                        <div class="space-y-6 md:basis-7/12 lg:flex-none lg:basis-1/2 lg:space-y-6">
+                            <h2 class="font-poppins text-5xl md:text-6xl">Over 6 year's of project manager experience.
+                            <p class="break-words font-open-sans text-xl leading-loose text-tertiary">
+                                I'm committed to on-time project delivery, optimizing infrastructure, and uniting developers with stakeholders.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-1 basis-full">
+                            <div class="flex flex-col-reverse items-center gap-12 md:flex-row lg:gap-16">
+                                <div class="flex-none space-y-16 font-open-sans md:w-5/12">
+                                    <div class="space-y-4">
+                                        <span class="rounded-md bg-quaternary py-2 px-6 font-bold text-secondary">
+                                            Location
+                                        </span>
+                                        <div class="font-bold">Miami, Florida</div>
+                                        <div class="text-tertiary">
+                                            Currently residing in Pembroke Pines FL, born and raised in the sunshine state.
+                                        </div>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <span class="rounded-md bg-quaternary py-2 px-6 font-bold text-secondary">
+                                            Education
+                                        </span>
+                                        <div class="font-bold">A.S in Computer Science ( Computer adminstriation and networking)</div>
+                                        <div class="text-tertiary">
+                                            Expert in the sectors of Healthcare, Finance, Tech and oil and gas.
+                                        </div>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <span class="rounded-md bg-quaternary py-2 px-6 font-bold text-secondary">
+                                            Certications
+                                        </span>
+                                        <div class="font-bold">PMP CSM  Security +</div>
+                                        </div>
+                                        <div class="space-y-4"
+                                        <div class="text-tertiary">
+                                            <div class="space-y-4">
+                                                <span class="rounded-md bg-quaternary py-2 px-6 font-bold text-secondary">
+                                                    Leadership & Philanthropy
+                                                </span>
+                                                <div class="font-bold">Board Treasure - Blacc FL</div>
+                                                Feeding South Florida Volunteer
+                                                <div class="font-bold">Project innovate - Program Mentor</div>
+                                                
+                
+                                                <div class="text-tertiary">
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 flex-1 md:mt-0">
+                                    <div class="relative">
+                                        
+                                        <img src="./assets/img/portfolio/budget approval.png" alt="Linear Bg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Profile Detail -->
+            </div>
+        </section>
+        <!-- End Section Two -->
+
+        <!-- Section Three -->
+        <section id="sectionPortfolio"
+            class="mx-auto h-auto px-6 py-28 text-primary sm:max-w-4xl sm:py-40 md:max-w-4xl lg:max-w-6xl lg:px-12">
+            <div class="flex flex-col">
+                <div class="mb-10 flex-none">
+                    <!-- Section Title -->
+                    <div class="inline-flex gap-2 font-open-sans text-xl font-bold">
+                        <div
+                            class="before:text-secondary before:content-['<'] after:text-secondary after:content-['/>']">
+                            Project Management
+                        </div>
+                    </div>
+                    <!-- End Section Title -->
+                </div>
+                <div class="mb-10 flex-1 font-open-sans leading-relaxed text-tertiary md:w-1/2 lg:w-2/5">
+                    Here are some recent outstanding projects I have charted and implimentated new products. 
+                </div>
+                <div class="mb-10 flex-1 md:w-1/2 lg:w-2/5">
+                    <div class="flex flex-wrap gap-3 font-poppins sm:gap-6">
+                        <div class="inline-flex gap-2">
+                            <div class="text-tertiary before:text-secondary before:content-['//']">
+                                Project Manager
+                            </div>
+                        </div>
+                        <div class="inline-flex gap-2">
+                            <div class="text-tertiary before:text-secondary before:content-['//']">
+                                Phase 1 & Phase 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Card -->
+            <div class="space-y-16 sm:space-y-12">
+                <div class="flex flex-col gap-10 md:flex-row lg:gap-24">
+                    <a href="https://github.com" target="_blank" class="mt-12 h-72 flex-1  sm:mt-0">
+                        <img class="h-full w-full rounded-2xl object-cover object-center"
+                            src="./assets/img/portfolio/Planning.JPG" alt="Post" />
+                    </a>
+                    <div class="flex-none md:w-2/5 lg:w-2/6">
+                        <div class="flex h-full items-end">
+                            <div class="flex-1 space-y-8">
+                                <span
+                                    class="rounded-md bg-quaternary py-2 px-6 font-open-sans font-bold text-secondary">
+                                    Before - Phase 1
+                                </span>
+                                <div class="space-y-8 font-poppins text-primary">
+                                    <div class="text-3xl font-semibold">Av Deployment Project</div>
+                                    
+                                    <div> My Role: Led the project as the primary project manager using MS Project for detailed scheduling and Jira for task tracking.
+                                        Coordinated with internal IT teams, vendors (Cisco and Microsoft), and external developers to manage installations.
+                                        <div style="line-height: 1.6; padding: 10px;"></div>
+                                        Implemented Agile methodology, using sprints for iterative progress across multiple office locations.
+                                        Managed cross-functional teams of up to 50 people, ensuring that all stakeholders were aligned with the project goals and timelines.</div>
+                                    <div>
+                                        Scope: Full deployment across Houston, Cambridge, Louisiana, and Canada.
+                                <div style="line-height: 1.6; padding: 10px;"></div>
+                                        Duration: 6 months | Estimated Cost: $6.4 million
+
+                                    
+                                        
+                                    </div>
+                                </div>
+                                
+
+                                            <!-- Arrow top left -->
+                                            <svg class="h-6 w-6 fill-primary group-hover:fill-tertiary" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19L5 17.59Z" />
+                                            </svg>
+                                            <!-- End Arroe top left -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-10 md:flex-row lg:gap-24">
+                    <a Thank you target="_blank" class="mt-12 h-72 flex-1  sm:mt-0">
+                        <img class="h-full w-full hover:border border-transparent bg-secondary hover:border-secondary/50 rounded-2xl object-cover object-center"
+                            src="./assets/img/portfolio/touch panel.JPG" alt="Post" />
+                            <div class="flex-1 space-y-8">
+                                <span
+                                    class="rounded-md bg-quaternary py-2 px-6 font-open-sans font-bold text-secondary">
+                                    After
+                    </a>
+                    <div class="flex flex-col gap-10 md:flex-row lg:gap-24">
+                        <div class="flex h-full items-end">
+                            <div class="flex-1 space-y-8">
+                                
+                                <div class="space-y-8 font-poppins text-primary">
+                                    <div class="text-3xl font-semibold">Results</div>
+                                    <div>Project Complete</div>
+                                    <div>
+                                        Delivered the project 15% under budget while meeting all technical and security compliant requirements.</div>
+                                    
+                                       
+                                <div style="line-height: 1.6; padding: 10px;"></div>
+                                Achieved 98% stakeholder satisfaction due to regular updates and proactive risk management.
+
+                                       Our Charter was approved and utilized for new deployments in the future.
+                                        <div style="line-height: 1.6; padding: 10px;"> </div>Completed the project 25% ahead of schedule, with zero downtime during business hours.
+                                        Testing & QA: weekly Q/A testing and backlog refinement, achieving 100% system functionality before go-live.
+                                        
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-6 md:justify-start">
+                                    <a href="https://google.com" target="_blank"
+                                        class="inline-flex items-center rounded-lg bg-tertiary py-2 px-3 font-poppins text-sm before:content-['<'] after:content-['>'] hover:bg-quaternary hover:text-secondary">
+                                        /
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Post Card -->
+        </section>
+        <!-- End Section Three -->
+
+        <!-- Section Four -->
+        <section id="sectionContact"
+            class="mx-auto h-auto px-6 py-28 text-primary sm:max-w-4xl sm:py-40 md:max-w-4xl lg:max-w-6xl lg:px-12">
+            <div class="flex flex-col">
+                <div class="mb-8 flex-none md:mb-10">
+                    <!-- Section Title -->
+                    <div class="inline-flex gap-2 font-open-sans text-xl font-bold">
+                        <div
+                            class="before:text-secondary before:content-['<'] after:text-secondary after:content-['/>']">
+                            Contact Me
+                        </div>
+                    </div><div class="z-10 flex">
+                        <img class="overflow-hidden object-cover object-top sm:h-[500px] sm:w-[500px]"
+                            src="./assets/img/about/headhot3.png" alt="Carson Graham" />
+                    <!-- End Section Title -->
+                </div>
+                <h2 class="mb-8 font-poppins text-4xl font-medium leading-relaxed md:mb-10 md:text-5xl lg:text-6xl">
+                    I've worked on so many projects and I cant wait to work with you.
+                </h2>
+                <p class="break-words font-open-sans text-xl leading-loose text-tertiary">
+                    Anything from major deployments to software developments.
+                </p>
+            </div>
+            <div class="mt-6 flex flex-col-reverse items-center gap-20 md:flex-row md:gap-12 lg:gap-20">
+                <div class="w-full flex-none md:w-2/5 lg:w-3/5">
+                    <!-- Social Card -->
+                    <div class="mx-8 grid grid-cols-2 gap-10 md:mx-0">
+                        
+                                    </svg>
+                           
+                        <!-- End Github Card -->
+
+                        <!-- Linked InCard -->
+                        <a href="https://www.linkedin.com/in/carson-graham-304310152/" target="_blank"
+                            class="group col-span-2 rounded-xl bg-quinary py-10 px-6 hover:bg-senary/10 lg:col-span-1 lg:py-12">
+                            <div class="flex flex-col gap-8">
+                                <div
+                                    class="inline-flex h-20 w-20 flex-none items-center justify-center rounded-full bg-quaternary">
+                                    <!-- LinkedIn Icon -->
+                                    <svg class="h-10 w-10" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_228_43040)">
+                                            <path
+                                                d="M37.0391 0H2.95312C1.32031 0 0 1.28906 0 2.88281V37.1094C0 38.7031 1.32031 40 2.95312 40H37.0391C38.6719 40 40 38.7031 40 37.1172V2.88281C40 1.28906 38.6719 0 37.0391 0ZM11.8672 34.0859H5.92969V14.9922H11.8672V34.0859ZM8.89844 12.3906C6.99219 12.3906 5.45312 10.8516 5.45312 8.95312C5.45312 7.05469 6.99219 5.51562 8.89844 5.51562C10.7969 5.51562 12.3359 7.05469 12.3359 8.95312C12.3359 10.8438 10.7969 12.3906 8.89844 12.3906ZM34.0859 34.0859H28.1562V24.8047C28.1562 22.5938 28.1172 19.7422 25.0703 19.7422C21.9844 19.7422 21.5156 22.1562 21.5156 24.6484V34.0859H15.5938V14.9922H21.2812V17.6016H21.3594C22.1484 16.1016 24.0859 14.5156 26.9688 14.5156C32.9766 14.5156 34.0859 18.4688 34.0859 23.6094V34.0859Z"
+                                                class="fill-primary group-hover:fill-secondary" fill="none" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_228_43040">
+                                                <rect width="40" height="40"
+                                                    class="fill-primary group-hover:fill-secondary" fill="none" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+
+                                    <!-- End LinkedIn Icon -->
+                                </div>
+                                <div class="inline-flex flex-col space-y-3 font-open-sans">
+                                    <div class="text-xl font-bold text-primary">LinkedIn</div>
+                                    <div class="break-words text-quaternary">
+                                        https://www.linkedin.com/in/carson-graham-304310152/
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- End LinkedIn Card -->
+
+                        <!-- Twitter Card -->
+                        
+                                    <!-- End Twitter Icon -->
+                               
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- End Twitter card -->
+                    </div>
+                    <!-- End Social Card -->
+                </div>
+                <div class="flex-1">
+                    <img src="./assets/img/portfolio/" alt="" />
+                </div>
+            </div>
+        </section>
+        <!-- Section Four -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative mx-auto my-20 h-full w-full">
+        <div class="flex justify-center">
+            <span class="font-open-sans text-xl text-primary text-quaternary before:content-['©']">
+                Carson Graham 2024
+            </span>
+        </div>
+    </footer>
+    <!-- End Footer -->
+</body>
+
+<!-- Custom Javascript -->
+<script src="./assets/custom/js/script.js"></script>
+
+</html>
